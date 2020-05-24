@@ -1,4 +1,4 @@
-package studio.bz_soft.newsreader.root
+package studio.bz_soft.newsreader.root.state
 
 data class LoadingState(
     val isLoading: Boolean = false,

@@ -2,7 +2,8 @@ package studio.bz_soft.newsreader.data.models.viewmodels
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import studio.bz_soft.newsreader.root.LoadingState
+import studio.bz_soft.newsreader.root.state.LoadingState
+import studio.bz_soft.newsreader.root.state.LoadingStateInterface
 import studio.bz_soft.newsreader.ui.root.RootPresenter
 
 class LoadingStateViewModel : LoadingStateInterface, ViewModel() {

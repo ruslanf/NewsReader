@@ -1,4 +1,4 @@
-package studio.bz_soft.newsreader.data.models.viewmodels
+package studio.bz_soft.newsreader.root.state
 
 interface LoadingStateInterface {
     fun loadingStarted()

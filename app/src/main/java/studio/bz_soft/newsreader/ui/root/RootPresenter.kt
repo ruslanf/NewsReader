@@ -9,7 +9,7 @@ import studio.bz_soft.newsreader.data.http.Left
 import studio.bz_soft.newsreader.data.http.Right
 import studio.bz_soft.newsreader.data.models.NewsModel
 import studio.bz_soft.newsreader.data.models.db.News
-import studio.bz_soft.newsreader.data.models.viewmodels.LoadingStateInterface
+import studio.bz_soft.newsreader.root.state.LoadingStateInterface
 import studio.bz_soft.newsreader.root.Constants.EMPTY_STRING
 import studio.bz_soft.newsreader.root.Constants.TOKEN
 import studio.bz_soft.newsreader.root.showError
