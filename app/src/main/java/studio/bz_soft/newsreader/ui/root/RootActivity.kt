@@ -4,8 +4,10 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.view.menu.MenuBuilder
+import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
@@ -14,10 +16,13 @@ import androidx.navigation.ui.setupWithNavController
 import kotlinx.android.synthetic.main.activity_root.*
 import org.koin.android.ext.android.inject
 import studio.bz_soft.newsreader.R
+import studio.bz_soft.newsreader.data.models.viewmodels.LoadingStateViewModel
+import studio.bz_soft.newsreader.root.LoadingState
 
 class RootActivity : AppCompatActivity() {
 
     private val presenter by inject<RootPresenter>()
+    private val loadingStateViewModel by inject<LoadingStateViewModel>()
 
     private val navController by lazy { findNavController(R.id.nav_host_fragment) }
 
@@ -59,10 +64,20 @@ class RootActivity : AppCompatActivity() {
     }
 
     private fun initialize() {
+        loadingStateViewModel.registerLoadingStateListener(presenter)
+        loadingStateViewModel.loadingState.observe(this, Observer { it?.let { render(it) } })
+
         presenter.synchronize()
     }
 
     private fun syncButtonListener() {
         presenter.synchronize()
+    }
+
+    private fun render(loadingState: LoadingState) {
+        progressBar.visibility = when (loadingState.isLoading) {
+            true -> View.VISIBLE
+            false -> View.GONE
+        }
     }
 }

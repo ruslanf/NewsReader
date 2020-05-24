@@ -12,7 +12,7 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_root.*
-import kotlinx.android.synthetic.main.fragment_news.view.*
+import kotlinx.android.synthetic.main.fragment_news.*
 import org.koin.android.ext.android.inject
 import studio.bz_soft.newsreader.R
 import studio.bz_soft.newsreader.data.models.db.News
@@ -58,6 +58,7 @@ class NewsFragment : Fragment() {
                 }
             }
             swipeRefresh.setOnRefreshListener { refreshListener(this) }
+
             newsListViewModel.getNewsList().observe(viewLifecycleOwner, Observer {
                 renderNewsList(it)
             })

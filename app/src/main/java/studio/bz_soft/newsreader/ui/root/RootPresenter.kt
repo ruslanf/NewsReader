@@ -9,6 +9,7 @@ import studio.bz_soft.newsreader.data.http.Left
 import studio.bz_soft.newsreader.data.http.Right
 import studio.bz_soft.newsreader.data.models.NewsModel
 import studio.bz_soft.newsreader.data.models.db.News
+import studio.bz_soft.newsreader.data.models.viewmodels.LoadingStateInterface
 import studio.bz_soft.newsreader.root.Constants.EMPTY_STRING
 import studio.bz_soft.newsreader.root.Constants.TOKEN
 import studio.bz_soft.newsreader.root.showError
@@ -17,6 +18,8 @@ import kotlin.coroutines.CoroutineContext
 class RootPresenter(
     private val appContext: Context
 ) : CoroutineScope, KoinComponent {
+
+    var loadingStateInterface: LoadingStateInterface? = null
 
     private val logTag = RootPresenter::class.java.simpleName
 
@@ -34,6 +37,7 @@ class RootPresenter(
     }
 
     fun synchronize() {
+        loadingStateInterface?.loadingStarted()
         launch {
             coroutineScope {
                 val request = async(SupervisorJob(job) + Dispatchers.IO) {
@@ -70,6 +74,7 @@ class RootPresenter(
                     }
                 }
             }
+            loadingStateInterface?.loadingFinished()
         }
     }
 }
