@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Новости</string>
+
+    <string name="main_menu_title_news_list">Новости</string>
+    <string name="main_menu_title_more">Еще</string>
+
+    <string name="fragment_news_title">Новости</string>
+
+    <string name="fragment_detailed_news">Подробно о новости</string>
+
+    <string name="fragment_more_title">Еще</string>
+
+    <string name="news_synchronize">Синхронизировать</string>
+
+    <string name="root_sync_message_error">Ошибка синхронизации</string>
+</resources>

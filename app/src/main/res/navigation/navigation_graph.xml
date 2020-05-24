@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/menuNewsList">
+
+    <fragment
+        android:id="@+id/menuNewsList"
+        android:name="studio.bz_soft.newsreader.ui.news.NewsFragment"
+        android:label="@string/fragment_news_title"
+        tools:layout="@layout/fragment_news">
+        <action
+            android:id="@+id/action_menuNewsList_to_detailedFragment"
+            app:destination="@id/detailedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailedFragment"
+        android:name="studio.bz_soft.newsreader.ui.news.detailed.DetailedFragment"
+        android:label="DetailedFragment"
+        tools:layout="@layout/fragment_detailed_news"/>
+    <fragment
+        android:id="@+id/menuMore"
+        android:name="studio.bz_soft.newsreader.ui.more.MoreFragment"
+        android:label="@string/fragment_more_title"
+        tools:layout="@layout/fragment_more"/>
+</navigation>
