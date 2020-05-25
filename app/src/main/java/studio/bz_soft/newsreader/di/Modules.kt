@@ -10,7 +10,7 @@ import studio.bz_soft.newsreader.data.db.DbClient
 import studio.bz_soft.newsreader.data.db.DbClientInterface
 import studio.bz_soft.newsreader.data.http.ApiClient
 import studio.bz_soft.newsreader.data.http.ApiClientInterface
-import studio.bz_soft.newsreader.data.models.viewmodels.LoadingStateViewModel
+import studio.bz_soft.newsreader.root.state.LoadingStateViewModel
 import studio.bz_soft.newsreader.data.models.viewmodels.NewsViewModel
 import studio.bz_soft.newsreader.data.repository.*
 import studio.bz_soft.newsreader.root.App

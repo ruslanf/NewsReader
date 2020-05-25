@@ -16,7 +16,7 @@ import androidx.navigation.ui.setupWithNavController
 import kotlinx.android.synthetic.main.activity_root.*
 import org.koin.android.ext.android.inject
 import studio.bz_soft.newsreader.R
-import studio.bz_soft.newsreader.data.models.viewmodels.LoadingStateViewModel
+import studio.bz_soft.newsreader.root.state.LoadingStateViewModel
 import studio.bz_soft.newsreader.root.state.LoadingState
 
 class RootActivity : AppCompatActivity() {
